@@ -7,86 +7,79 @@
 
 <style>
   body {
-    margin:0;
-    padding:0;
-    height:100vh;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     background: linear-gradient(to bottom, #87CEFA, #ffffff);
-    position: relative;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
 
-  /* عکس بک‌گراند */
-  .bg-image {
-    position:absolute;
-    top:0.5cm;
-    left:0.5cm;
-    right:0.5cm;
-    bottom:0.5cm;
-    background-image: url("https://raw.githubusercontent.com/mohammadali1000messi-boop/Love-you-/main/Picsart_26-02-05_15-58-15-369.jpg");
+  /* لایه عکس */
+  .background-image {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    right: 3%;
+    bottom: 3%;
+    background-image: url("https://raw.githubusercontent.com/mohammadali1000messi-boop/I-love-you-/main/Picsart_26-02-05_15-58-15-369.jpg");
     background-size: cover;
     background-position: center;
     opacity: 0.8;
-    z-index: 0;
+    z-index: 1;
+    border-radius: 12px;
   }
 
-  /* متن بالا */
-  .top-text {
-    position:absolute;
-    top:12%;
-    left:1cm; /* ← یک سانت به چپ */
-    width:100%;
-    text-align:center;
-    font-size:1.35em;
-    color:#ffffff;
-    opacity:0;
-    animation: topFade 2s forwards;
-    z-index:1;
+  /* محتوای اصلی */
+  .content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  @keyframes topFade {
-    from { opacity:0; transform:translateX(-40px); }
-    to { opacity:1; transform:translateX(0); }
-  }
-
-  /* متن وسط */
+  /* متن */
   .text-box {
-    width:60%;
-    text-align:center;
-    font-size:1.2em;
-    color:#ffffff;
-    line-height:1.6em;
-    position:relative;
-    top:1cm; /* ↓ یک سانت پایین‌تر */
-    z-index:1;
+    width: 60%;
+    text-align: center;
+    font-size: 1.2em;
+    color: #ffffff;
+    line-height: 1.6em;
+    margin-top: 1cm; /* پایین‌تر اومدن متن وسط */
   }
 
   .text-box span {
-    opacity:0;
-    display:block;
+    opacity: 0;
+    display: block;
     animation: fadeIn 2s forwards;
   }
 
-  .text-box span:nth-child(1){animation-delay:0s;}
-  .text-box span:nth-child(2){animation-delay:2s;}
-  .text-box span:nth-child(3){animation-delay:4s;}
-  .text-box span:nth-child(4){animation-delay:6s;}
+  .text-box span:nth-child(1) {
+    animation-delay: 0s;
+    transform: translateX(-1cm); /* متن بالا کمی به چپ */
+  }
+  .text-box span:nth-child(2){ animation-delay: 2s; }
+  .text-box span:nth-child(3){ animation-delay: 4s; }
+  .text-box span:nth-child(4){ animation-delay: 6s; }
 
   @keyframes fadeIn {
-    to { opacity:1; }
+    to { opacity: 1; }
   }
 
   /* قلب و ستاره‌ها */
   .emoji {
-    position:absolute;
-    font-size:2rem;
-    opacity:0.5;
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.5;
     animation: floatUp 8s infinite;
-    z-index:1;
+    z-index: 2;
   }
 
   @keyframes floatUp {
@@ -96,45 +89,50 @@
 
   /* موزیک */
   .music-box {
-    position:absolute;
-    bottom:5%;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:1;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
   }
 
   .music-box audio {
-    width:300px;
+    width: 280px;
   }
 </style>
 </head>
 
 <body>
 
-<div class="bg-image"></div>
+<div class="background-image"></div>
 
-<div class="top-text">a month has passed...</div>
+<div class="content">
 
-<div class="text-box">
-  <span>My dear Dina ♥️</span>
-  <span>Spending a month by your side has filled my life with warmth, positive energy, understanding, and a renewed passion for living.</span>
-  <span>Thank you for being you one of the most beautiful things in my life ✨😍</span>
-  <span>«Happy one-month anniversary of our acquaintance.»</span>
-</div>
+  <!-- متن -->
+  <div class="text-box">
+    <span>My dear Dina ♥️</span>
+    <span>Spending a month by your side has filled my life with warmth, positive energy, understanding, and a renewed passion for living.</span>
+    <span>Thank you for being you — one of the most beautiful things in my life ✨😍</span>
+    <span>«Happy one-month anniversary of our acquaintance.»</span>
+  </div>
 
-<div class="emoji" style="left:10%; top:70%;">❤️</div>
-<div class="emoji" style="left:20%; top:60%;">💖</div>
-<div class="emoji" style="left:35%; top:80%;">⭐</div>
-<div class="emoji" style="left:50%; top:75%;">💖</div>
-<div class="emoji" style="left:65%; top:70%;">❤️</div>
-<div class="emoji" style="left:80%; top:60%;">⭐</div>
-<div class="emoji" style="left:90%; top:80%;">💖</div>
+  <!-- قلب و ستاره‌ها -->
+  <div class="emoji" style="left:10%; top:70%;">❤️</div>
+  <div class="emoji" style="left:20%; top:60%;">💖</div>
+  <div class="emoji" style="left:35%; top:80%;">⭐</div>
+  <div class="emoji" style="left:50%; top:75%;">💖</div>
+  <div class="emoji" style="left:65%; top:70%;">❤️</div>
+  <div class="emoji" style="left:80%; top:60%;">⭐</div>
+  <div class="emoji" style="left:45%; top:85%;">⭐</div>
 
-<div class="music-box">
-  <audio controls>
-    <source src="bg_audio_01.mp3" type="audio/mpeg">
-    مرورگر شما از پخش صوت پشتیبانی نمی‌کند
-  </audio>
+  <!-- موزیک -->
+  <div class="music-box">
+    <audio controls>
+      <source src="bg_audio_01.mp3" type="audio/mpeg">
+      مرورگر شما از پخش صوت پشتیبانی نمی‌کند
+    </audio>
+  </div>
+
 </div>
 
 </body>
